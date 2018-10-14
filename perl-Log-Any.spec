@@ -4,14 +4,14 @@
 #
 Name     : perl-Log-Any
 Version  : 1.707
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.707.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.707.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblog-any-perl/liblog-any-perl_1.705-1.debian.tar.xz
 Summary  : 'Bringing loggers and listeners together'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
-Requires: perl-Log-Any-license
+Requires: perl-Log-Any-license = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -24,7 +24,7 @@ Log::Dispatch or Log::Log4perl.
 %package dev
 Summary: dev components for the perl-Log-Any package.
 Group: Development
-Provides: perl-Log-Any-devel
+Provides: perl-Log-Any-devel = %{version}-%{release}
 
 %description dev
 dev components for the perl-Log-Any package.
@@ -67,13 +67,13 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Log-Any
-cp LICENSE %{buildroot}/usr/share/doc/perl-Log-Any/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/doc/perl-Log-Any/deblicense_copyright
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Log-Any
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Log-Any/LICENSE
+cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Log-Any/deblicense_copyright
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -82,23 +82,23 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Log/.gitignore
-/usr/lib/perl5/site_perl/5.26.1/Log/Any.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/Base.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/Development.pod
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/File.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/Null.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/Stderr.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/Stdout.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/Syslog.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/Test.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Adapter/Util.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Manager.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Proxy.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Proxy/Null.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Proxy/Test.pm
-/usr/lib/perl5/site_perl/5.26.1/Log/Any/Test.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/.gitignore
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Base.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Development.pod
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/File.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Null.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Stderr.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Stdout.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Syslog.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Test.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Util.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Manager.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Proxy.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Proxy/Null.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Proxy/Test.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Test.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -120,6 +120,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Log::Any::Test.3
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Log-Any/LICENSE
-/usr/share/doc/perl-Log-Any/deblicense_copyright
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Log-Any/LICENSE
+/usr/share/package-licenses/perl-Log-Any/deblicense_copyright
