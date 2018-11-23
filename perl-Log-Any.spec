@@ -82,23 +82,23 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.26.1/Log/.gitignore
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Base.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Development.pod
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/File.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Null.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Stderr.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Stdout.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Syslog.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Test.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Adapter/Util.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Manager.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Proxy.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Proxy/Null.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Proxy/Test.pm
-/usr/lib/perl5/vendor_perl/5.26.1/Log/Any/Test.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/.gitignore
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/Base.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/Development.pod
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/File.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/Null.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/Stderr.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/Stdout.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/Syslog.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/Test.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Adapter/Util.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Manager.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Proxy.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Proxy/Null.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Proxy/Test.pm
+/usr/lib/perl5/vendor_perl/5.28.0/Log/Any/Test.pm
 
 %files dev
 %defattr(-,root,root,-)
