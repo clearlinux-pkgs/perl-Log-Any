@@ -4,7 +4,7 @@
 #
 Name     : perl-Log-Any
 Version  : 1.708
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.708.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.708.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblog-any-perl/liblog-any-perl_1.705-1.debian.tar.xz
@@ -81,7 +81,7 @@ make TEST_VERBOSE=1 test
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Log-Any
 cp %{_builddir}/Log-Any-1.708/LICENSE %{buildroot}/usr/share/package-licenses/perl-Log-Any/89617cd16eccd37ac271de8c18ac6e5f645f700e
-cp %{_builddir}/Log-Any-1.708/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Log-Any/988f2dc2ee569cf40eb0e95796ed5c80461a34a8
+cp %{_builddir}/debian/copyright %{buildroot}/usr/share/package-licenses/perl-Log-Any/988f2dc2ee569cf40eb0e95796ed5c80461a34a8
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -123,22 +123,22 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Log/.gitignore
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Base.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Capture.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Development.pod
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/File.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Multiplex.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Null.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Stderr.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Stdout.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Syslog.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Test.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Adapter/Util.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Manager.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Proxy.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Proxy/Null.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Proxy/Test.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Log/Any/Test.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/.gitignore
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Base.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Capture.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Development.pod
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/File.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Multiplex.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Null.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Stderr.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Stdout.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Syslog.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Test.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Adapter/Util.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Manager.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Proxy.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Proxy/Null.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Proxy/Test.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Log/Any/Test.pm
