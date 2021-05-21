@@ -4,7 +4,7 @@
 #
 Name     : perl-Log-Any
 Version  : 1.709
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.709.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.709.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libl/liblog-any-perl/liblog-any-perl_1.705-1.debian.tar.xz
