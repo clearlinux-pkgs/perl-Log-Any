@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-Log-Any
-Version  : 1.714
-Release  : 28
-URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.714.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.714.tar.gz
+Version  : 1.715
+Release  : 29
+URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.715.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.715.tar.gz
 Summary  : 'Bringing loggers and listeners together'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
@@ -53,8 +53,11 @@ perl components for the perl-Log-Any package.
 
 
 %prep
-%setup -q -n Log-Any-1.714
-cd %{_builddir}/Log-Any-1.714
+%setup -q -n Log-Any-1.715
+cd %{_builddir}/Log-Any-1.715
+pushd ..
+cp -a Log-Any-1.715 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -62,7 +65,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 if test -f Makefile.PL; then
-%{__perl} Makefile.PL
+%{__perl} -I. Makefile.PL
 make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
@@ -89,6 +92,7 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
