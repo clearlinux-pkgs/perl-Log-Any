@@ -5,7 +5,7 @@
 #
 Name     : perl-Log-Any
 Version  : 1.716
-Release  : 31
+Release  : 33
 URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.716.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.716.tar.gz
 Summary  : 'Bringing loggers and listeners together'
@@ -47,6 +47,7 @@ license components for the perl-Log-Any package.
 Summary: perl components for the perl-Log-Any package.
 Group: Default
 Requires: perl-Log-Any = %{version}-%{release}
+Requires: perl(Devel::StackTrace::Extract)
 
 %description perl
 perl components for the perl-Log-Any package.
