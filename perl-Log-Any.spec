@@ -5,7 +5,7 @@
 #
 Name     : perl-Log-Any
 Version  : 1.716
-Release  : 33
+Release  : 34
 URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.716.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.716.tar.gz
 Summary  : 'Bringing loggers and listeners together'
