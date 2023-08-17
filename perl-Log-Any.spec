@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-Log-Any
-Version  : 1.716
-Release  : 34
-URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.716.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.716.tar.gz
+Version  : 1.717
+Release  : 35
+URL      : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.717.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.717.tar.gz
 Summary  : 'Bringing loggers and listeners together'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
@@ -47,17 +47,16 @@ license components for the perl-Log-Any package.
 Summary: perl components for the perl-Log-Any package.
 Group: Default
 Requires: perl-Log-Any = %{version}-%{release}
-Requires: perl(Devel::StackTrace::Extract)
 
 %description perl
 perl components for the perl-Log-Any package.
 
 
 %prep
-%setup -q -n Log-Any-1.716
-cd %{_builddir}/Log-Any-1.716
+%setup -q -n Log-Any-1.717
+cd %{_builddir}/Log-Any-1.717
 pushd ..
-cp -a Log-Any-1.716 buildavx2
+cp -a Log-Any-1.717 buildavx2
 popd
 
 %build
